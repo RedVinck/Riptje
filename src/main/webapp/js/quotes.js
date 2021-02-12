@@ -1,11 +1,11 @@
+getQuotes();
+
 async function getQuotes() {
 	let response = await fetch("/ManageQuoteServlet?command=quotes");
 	let quotes = await response.json();
 	showQuotes(quotes);
 	await getQuotes();
 }
-
-getQuotes();
 
 function showQuotes (quotes) {
 	let quoteDiv = document.getElementById("quotes");
